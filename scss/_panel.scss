@@ -1,0 +1,127 @@
+section {
+  width: 20vw;
+  height: 65vh;
+  position: absolute;
+  left: 50%;
+  top: 150%;
+  margin-left: -10vw;
+  margin-top: -32vh;
+  transition: 1s;
+
+  article {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+    .inner {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      padding: 3vh 0vw 3vh;
+      border-radius: 15px;
+      box-shadow: 10px 10px 20px rgba(0,0,0,.1);
+      opacity: .6;
+      transform: scale(.8);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: space-between;
+      transition: 1s;
+
+      .pic {
+        width: 17vw;
+        height: 17vw;
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: -9999px -9999px;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          border-radius: 15px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          background-image: inherit;
+        }
+      }
+      
+      .box {
+        width: 100%;
+
+        p {
+          content: "";
+          display: block;
+          width: 2px;
+          height: 3vh;
+          background-color: #51878e;
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
+
+      .txt {
+        width: 100%;
+        text-align: center;
+
+        h2 {
+          font-size: 20px;
+          line-height: 1;
+          font-family: 'Oswald', sans-serif;
+          color: #222;
+          margin-bottom: 2vh;
+        }
+        p {
+          font-size: 14px;
+          line-height: 1.2;
+          font-family: 'Noto Sans KR', sans-serif;
+          color: #777;
+          margin-bottom: 1vh;
+        }
+
+        .more {
+          position: relative;
+          margin: 0 auto;
+          width: 45%;
+          margin-top: 30px;
+          border: 1px solid #51878e;
+          border-radius: 20px;
+          cursor: pointer;
+          transition: .8s;
+
+          P {
+            display: block;
+            text-align: center;
+            margin-top: 1vh;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1;
+            color: #222;
+            transition: .8s;
+
+          }
+          &:hover {
+            background-color: #40909a;
+            & p {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    &.on {
+      .inner {
+          opacity: 1;
+          transform: scale(1);
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+.nav{
+    .nav-checkbox{
+        display: none;
+    }
+    .nav-button{
+        background-color: #fff;
+        width: 48px;
+        position: fixed;
+        top: 8vh;
+        right: 4vw;
+        z-index: 2000;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .nav-bg{
+        background-color: aquamarine;
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        top:7rem;
+        right: 4rem;
+        z-index: 1000;
+        border-radius: 7rem;
+        transition: all .7s;
+    }
+
+
+    .nav-checkbox:checked~ .nav-bg{ //checkbox가 체크된 상태일 때, 같은 형제 요소인 checkbox-bg
+        transform:scale(80);
+    }
+
+    .nav-icon{
+        position: relative;
+        margin-top:30px;
+
+        &::before{
+            top:-0.8rem;
+        }
+
+        &::after{
+            top:0.8rem;
+        }
+
+        &::before, &::after{
+            content:'';
+            position: absolute;
+            left:0;
+            transition: all .2s;
+        }
+
+        &, &::before, &::after{
+            display:inline-block;
+            width: 2vw;
+            height: 2px;
+            background-color:#40909a;
+        }
+    }
+
+    .nav-button:hover .nav-icon::before{
+        top:-1rem;
+    }
+
+    .nav-button:hover .nav-icon::after{
+        top:1rem;
+    }
+
+
+//메뉴 삼선 버튼 애니메이션 효과
+
+    .nav-checkbox:checked~.nav-button .nav-icon{//checkbox가 체크됐을 때, 메뉴삼선 가운데
+        background-color: transparent;
+    }
+
+    .nav-checkbox:checked~.nav-button .nav-icon::before{//checkbox가 체크됐을 때, 메뉴삼선 before
+        top:0;
+        transform: rotate(135deg);
+    }
+    .nav-checkbox:checked~.nav-button .nav-icon::after{//checkbox가 체크됐을 때, 메뉴삼선 after
+        top:0;
+        transform: rotate(-135deg);
+    }
+
+    
+    //메뉴 리스트
+    .nav-body{
+        position:fixed;
+        top: 0;
+        left:-120%;
+        width:100vw;
+        height:100vh;
+        z-index: 1500;
+        transition: all .8s;
+        opacity: 0;
+    }
+
+    .nav-list{
+        position: absolute;
+        left:50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        list-style:none;
+        width:100%;
+        text-align: center;
+    }
+
+    .nav-link{
+        display:inline-block;
+        font-size: 3rem;
+        font-weight: 400;
+        padding:1rem 2rem;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all .6s;
+        background-color: aquamarine;
+        background-size: 230%;
+
+        &:hover{
+            color:#000;
+            background-position: 100%;
+        }
+
+        span{
+            display: inline-block;
+            margin-right:1.5rem;
+        }
+    }
+
+    .nav-checkbox:checked~.nav-body{
+        left:0;
+        opacity: 1;
+    }
+}

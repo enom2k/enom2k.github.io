@@ -165,7 +165,10 @@ figure {
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(25deg, #1f2d30, #51878e);
+  background-image: url("/img/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 figure h1 {
   position: absolute;
@@ -302,10 +305,10 @@ figure section article .inner .txt .more P {
   color: #222;
   transition: 0.8s;
 }
-figure section article .inner .txt .more:hover {
+figure section article:hover .inner .txt .more {
   background-color: #40909a;
 }
-figure section article .inner .txt .more:hover p {
+figure section article:hover .inner .txt .more p {
   color: #fff;
 }
 figure section article.on .inner {

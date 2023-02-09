@@ -1,3 +1,23 @@
+const body = document.querySelector('body');
+  let scrollPosition = 0;
+
+  //body fixed
+  function enable() {
+    scrollPosition = window.pageYOffset;
+    body.style.overflow = 'hidden';
+    body.style.position = 'fixed';
+    body.style.top = `-${scrollPosition}px`;
+    body.style.width = '100%';
+  }
+
+  function disable() {
+    body.style.removeProperty('overflow');
+    body.style.removeProperty('position');
+    body.style.removeProperty('top');
+    body.style.removeProperty('width');
+    window.scrollTo(0, scrollPosition);
+  }
+
 const load = gsap.timeline({
   paused: true,
   onStart: function(){
@@ -7,6 +27,7 @@ const load = gsap.timeline({
     disable();
   }
 })
+
 load.addLabel('label')
 .to('.title-box', {opacity: 1, delay: .3, duration: 2},'label')
 .to('.page-load', {yPercent: -100, delay: 2.5, ease: Power3.easeIn, duration: .8},'label')

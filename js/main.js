@@ -12,7 +12,7 @@ load.addLabel('label')
 .to('.page-load', {yPercent: -100, delay: 2.5, ease: Power3.easeIn, duration: .8},'label')
 .to('.title-box', {opacity: 0, delay: 2, duration: 1.7},'label')
 .set('.page-load', {display: 'none', delay: 3.3},'label')
-.fromTo('.article', {yPercent: 100, opacity: 0}, {yPercent: 0, opacity: 1, duration: .3, ease: Power4.easeOut, delay: 3.3},'label')
+.fromTo('article', {yPercent: 100, opacity: 0}, {yPercent: 0, opacity: 1, duration: .3, ease: Power4.easeOut, delay: 3.3},'label')
 load.play();
 
 
